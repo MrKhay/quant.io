@@ -1,0 +1,83 @@
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+html {
+  overflow-y: auto; /* Adds scrollbar space always */
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  height: 100%;
+  scroll-padding-top: var(--navbar-height);
+  overscroll-behavior: none;
+}
+
+:root {
+  @apply bg-surface-50 dark:bg-surface-900;
+  --color-primary: #2bae66;
+  --color-status-green: rgba(14, 104, 86, 0.92);
+  --color-blue: #448aff;
+  --color-clay: rgba(19, 225, 184, 0.24);
+  --color-dark-gray: #17181a;
+  --color-violet: rgba(225, 19, 19, 0.24);
+  --color-white: #ffffff;
+  --color-yellow: #e1c613;
+  --color-gray: #edeff2;
+  --color-gray-dark: #494949;
+  --color-gray-border: #b7b7b7b6;
+  --color-txt-gray: #616161;
+  --color-txt-gray-dark: #9f9f9f;
+  --color-light-schemer-base: #676666;
+  --color-light-schemer-highlight: #f5f5f5;
+  --color-dark-schemer-base: #3a3a3a;
+  --color-dark-schemer-highlight: #4e4e4e;
+}
+
+/* Dark Mode */
+.dark {
+  --color-primary: #2bae66;
+  --color-status-green: rgba(14, 104, 86, 0.8);
+  --color-blue: #1976d2;
+  --color-clay: rgba(19, 225, 184, 0.4);
+  --color-dark-gray: #1a1a1a;
+  --color-violet: rgba(225, 19, 19, 0.4);
+  --color-white: #e0e0e0;
+  --color-yellow: #c9a30e;
+  --color-gray: #333333;
+  --color-gray-dark: #222222;
+  --color-gray-border: #3c3c3c;
+  --color-txt-gray: #9f9f9f;
+  --color-txt-gray-dark: #bfbfbf;
+  --color-light-schemer-base: #2c2c2c;
+  --color-light-schemer-highlight: #3a3a3a;
+  --color-dark-schemer-base: #232323;
+  --color-dark-schemer-highlight: #2a2a2a;
+}
+
+nav {
+  height: var(--navbar-height);
+  position: fixed;
+  top: 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow-x: auto;
+  overflow-y: auto;
+  left: 0;
+  right: 0;
+  z-index: 10000; /* Ensure it's above all content */
+}
+
+/* Add padding on large screens */
+@media (min-width: 1024px) {
+  nav {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
