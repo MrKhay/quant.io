@@ -1,63 +1,52 @@
 <script lang="ts" setup></script>
+
 <template>
-  <nav class="fixed w-full top-4 z-40 px-5">
-    <div class="flex justify-between items-center w-full">
-      <NuxtLink to="/" class="text-2xl font-bold text-white">Quant.io</NuxtLink>
+  <header
+    class="border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur-sm sticky top-0 z-50"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo Section -->
+        <div class="flex items-center space-x-2">
+          <div class="logo-icon">
+            <span class="text-white font-bold text-sm">Q</span>
+          </div>
+          <span class="text-xl font-semibold text-white">Quant.io</span>
+          <span class="version-badge">v2.1.0</span>
+        </div>
 
-      <!-- Links -->
-      <ul class="flex space-x-4">
-        <li>
-          <NuxtLink to="/" class="text-gray-300 hover:text-blue-500 text"
-            >Showcase</NuxtLink
-          >
-        </li>
-        <li>
-          <NuxtLink to="/about" class="text-gray-300 hover:text-blue-500 text"
-            >Documentation</NuxtLink
-          >
-        </li>
-        <li>
-          <NuxtLink to="/contact" class="text-gray-300 hover:text-blue-500 text"
-            >Example</NuxtLink
-          >
-        </li>
-      </ul>
-
-      <!-- Icons -->
-      <ul class="flex space-x-4">
-        <li>
-          <NuxtLink to="/" class="text-gray-300 hover:text-blue-500 icon">
-            <Icon name="mdi:github" class="icon" />
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/about" class="text-gray-300 hover:text-blue-500">
-            <Icon name="ic:baseline-discord" class="icon"
-          /></NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/contact" class="text-gray-300 hover:text-blue-500">
-            <Icon name="ri:twitter-x-line" class="icon"
-          /></NuxtLink>
-        </li>
-      </ul>
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#" class="nav-link">Documentation</a>
+          <a href="#" class="nav-link">Examples</a>
+          <a href="#" class="nav-link">Showcase</a>
+          <a href="#" class="nav-link">GitHub</a>
+        </nav>
+      </div>
     </div>
-  </nav>
+  </header>
 </template>
 
-<style>
-  .text {
-    @apply label-small;
-    transition: color 0.3s ease-in-out;
-  }
-  .text:hover {
-    color: #1e90ff; /* Nice blue color for hover effect */
-  }
-  .icon {
-    @apply label-large;
+<style scoped>
+  .logo-icon {
+    @apply w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center;
     transition: transform 0.3s ease-in-out;
   }
-  .icon:hover {
-    transform: scale(1.2); /* Slight zoom effect on hover */
+
+  .logo-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .version-badge {
+    @apply text-xs bg-white/10 px-2 py-1 rounded-full text-gray-400;
+  }
+
+  .nav-link {
+    @apply text-sm text-gray-300;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .nav-link:hover {
+    @apply text-orange-500 underline;
   }
 </style>
